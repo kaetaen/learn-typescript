@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var app = express_1.default();
 app.get('/', function (_req, res) {
-    return res.send('hello world');
+    res.send('olá mundo');
 });
 app.listen(8080, function () {
-    console.log('olá mundo');
+    console.log('server online');
 });
