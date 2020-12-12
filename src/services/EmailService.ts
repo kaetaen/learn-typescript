@@ -1,0 +1,28 @@
+interface IMailTo {
+  name: string;
+  email: string;
+}
+
+interface IMailMessage {
+  subject: string;
+  body: string;
+  attachment ?: string[]
+}
+
+interface IMessageDTO {
+  to: IMailTo;
+  message: IMailMessage;
+}
+
+interface IMailService {
+  sendEmail (request: IMessageDTO): void
+}
+
+class EmailService implements IMailService {
+
+  sendEmail ({ to, message }: IMessageDTO) {    
+    console.log(`Email enviado to ${to.name}: ${message.body}`);
+  }
+}
+
+export default EmailService;

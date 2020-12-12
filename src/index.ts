@@ -1,11 +1,10 @@
 import express from 'express'
+import routes from './routes'
 
 const app = express()
 
-app.get('/', (_req, res) => {
-  res.send('olá mundo')
-})
+app.use(routes)
 
-app.listen(8080, () => {
+app.listen(3333, () => {
   console.log('server online')
 })
